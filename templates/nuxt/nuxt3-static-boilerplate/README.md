@@ -1,75 +1,26 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 Static Boilerplate
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+The **Nuxt 3 Static Boilerplate** template is designed to help developers create static sites with [Nuxt](https://nuxt.com/docs/getting-started/introduction), utilizing its powerful static site generation capabilities. It deploys a basic Nuxt 3 application and includes basic configurations to optimize it, such as multiple Cache Settings and Gzip compression.
 
-## Setup
+This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [How to deploy the Nuxt 3 Static Boilerplate](https://www.azion.com/en/documentation/products/guides/nuxt-static-boilerplate/) guide.
 
-Make sure to install the dependencies:
+This template uses Nuxt `3.13.0`.
 
-```bash
-# npm
-npm install
+---
 
-# pnpm
-pnpm install
+## Requirements
 
-# yarn
-yarn install
+- Have a [GitHub account](https://github.com/signup).
+  - Every push will be deployed automatically to the main branch in this repository to keep your project updated.
 
-# bun
-bun install
-```
+> **Note**: this template uses [Application Accelerator](https://www.azion.com/en/documentation/products/build/edge-application/application-accelerator/) and [Edge Functions](https://www.azion.com/en/documentation/products/build/edge-application/edge-functions/) and it could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 
-## Development Server
+---
 
-Start the development server on `http://localhost:3000`:
+## Deploy your own
 
-```bash
-# npm
-npm run dev
+Deploy your own Nuxt Static project with Azion.
 
-# pnpm
-pnpm run dev
+[![Deploy Button](/static/button.png)](https://console.azion.com/create/nuxt-static-boilerplate/ "Deploy with Azion")
 
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/nuxt-static-boilerplate/).
