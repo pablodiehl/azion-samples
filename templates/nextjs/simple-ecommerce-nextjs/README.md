@@ -20,4 +20,4 @@ Deploy your own Simple Ecommerce Next.js project with Azion.
 ## Branches
 
 - `main`: starter code (use this if you would like to follow along with the tutorial)
-- `final-version`: final code (what is currently deployed on Vercel)
+- `final-version`: final code

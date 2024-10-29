@@ -22,14 +22,6 @@ The website also features a new blog UI was built using Material UI components a
 
 ## Start your project
 
-### Deploy on Vercel
-
-You can get started by creating your own Docusaurus website and deploy to Vercel by clicking the link:
-
-[![](https://vercel.com/button)](https://vercel.com/new/clone?s=https%3A%2F%2Fgithub.com%2Fnamnguyenthanhwork%2Fdocusaurus-material-ui-template&showOptionalTeamCreation=false)
-
-Vercel will copy the [Docusaurus Material UI](https://github.com/namnguyenthanhwork/docusaurus-material-ui-template) and deploy the website for you. Once completed, every commit in the repo will be deployed automatically.
-
 ### Installation
 
 Clone the [repository](https://github.com/namnguyenthanhwork/docusaurus-material-ui-template)

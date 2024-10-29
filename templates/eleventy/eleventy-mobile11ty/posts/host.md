@@ -12,7 +12,6 @@ tags:
   - deploy Mobile11ty
   - deploy eleventy
   - Static host
-  - vercel
   - github
   - heroku
   - firebase

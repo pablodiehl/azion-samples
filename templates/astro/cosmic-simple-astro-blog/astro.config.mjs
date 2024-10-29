@@ -5,6 +5,5 @@ import robotsTxt from 'astro-robots-txt'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), react(), robotsTxt()],
-  site: 'https://simple-astro-blog.vercel.app'
+  integrations: [tailwind(), react(), robotsTxt()]
 })
