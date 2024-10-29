@@ -10,7 +10,6 @@ This template uses Astro version `4.5.12` and Lit version `3.1.2`.
 >
 > Join the Azion communities at [GitHub](https://github.com/aziontech) and [Discord](https://discord.com/channels/1112754829878624390/1113104727979348008) to learn, seek advice, and stay updated on trends.
 
-
 ---
 
 ## Requirements
