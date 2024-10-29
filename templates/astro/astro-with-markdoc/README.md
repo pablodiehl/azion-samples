@@ -1,67 +1,30 @@
-# Astro Example: Markdoc (experimental)
+# Astro with Markdoc
 
-This starter showcases the experimental Markdoc integration.
+The **Astro with Markdoc** template deploys a new edge application based on Astro working with the experimental Markdoc integration. This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
 
-```sh
-npm create astro@latest -- --template with-markdoc
-```
+This template uses Astro version `4.5.12`.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/with-markdoc)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/with-markdoc)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+> **Note**: this is a community template. Third-party or external developers created it, and Azion only enables the deployment in the Azion Edge Platform. Azion doesn't provide maintenance or support for the content itself but can assist you with any queries or issues you may encounter while deploying this template or using the platform.
+>
+> Join the Azion communities at [GitHub](https://github.com/aziontech) and [Discord](https://discord.com/channels/1112754829878624390/1113104727979348008) to learn, seek advice, and stay updated on trends.
 
 ---
 
-## Deploy Your Own
+## Requirements
+
+Before using this template, you need to:
+
+- Have a [GitHub account](https://github.com/signup).
+  - Every push will be deployed automatically to the main branch in this repository to keep your project updated.
+
+> **Note**: this template uses [Application Accelerator](https://www.azion.com/en/documentation/products/build/edge-application/application-accelerator/) and [Edge Functions](https://www.azion.com/en/documentation/products/build/edge-application/edge-functions/), and it could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+
+---
+
+## Deploy your own
 
 Deploy your own Astro project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/astro/astro-with-markdoc "Deploy with Azion")
 
-
----
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── content/
-        └── docs/
-│           └── intro.mdoc
-|       └── config.ts
-│   └── components/Aside.astro
-│   └── layouts/Layout.astro
-│   └── pages/index.astro
-|   └── env.d.ts
-├── astro.config.mjs
-├── markdoc.config.mjs
-├── README.md
-├── package.json
-└── tsconfig.json
-```
-
-Markdoc (`.mdoc`) files can be used in content collections. See `src/content/docs/` for an example file.
-
-You can also render Astro components from your Markdoc files using [tags](https://markdoc.dev/docs/tags). See the `markdoc.config.mjs` file for an example configuration.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
