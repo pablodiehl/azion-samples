@@ -1,6 +1,6 @@
 # Astro with MDX
 
-The **Astro with MDX** template deploys a new edge application based on Astro, using @astrojs/mdx to author content using MDX. This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
+The **Astro with MDX** template deploys a new edge application based on Astro, using `@astrojs/mdx` to author content using MDX. This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
 
 This template uses Astro version `4.5.12` and Preact version `10.19.2`.
 
