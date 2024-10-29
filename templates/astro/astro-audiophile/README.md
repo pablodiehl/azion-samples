@@ -2,7 +2,7 @@
 
 The **Astro Audiophile** template provides a quick option to create an e-commerce website based on the Astro framework. Even when the default visual is designed as a store or catalog for audio devices, it can be customized to showcase any type of product.
 
-This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
+This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
 
 This template uses Astro version `3.1.2`.
 
@@ -29,4 +29,4 @@ Deploy your own Astro Audiophile project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/azion-community/astro-audiophile "Deploy with Azion")
 
-For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
