@@ -27,4 +27,4 @@ Deploy your own Astro project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/astro/astro-markdown-with-plugins "Deploy with Azion")
 
-For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/use-a-template-via-azion-console/).
