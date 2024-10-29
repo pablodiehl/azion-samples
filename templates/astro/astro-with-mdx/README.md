@@ -27,3 +27,4 @@ Deploy your own Astro project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/astro/astro-with-mdx "Deploy with Azion")
 
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
