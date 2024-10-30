@@ -1,33 +1,28 @@
 # DevsCard
 
-A fully customizable template to create your online (and paper) resume without writing a single line of code.
+The **DevsCard** template contains the configurations to create your online and paper resume using the DevsCard project. After the deployment, you can update it with your information and create your portfolio.
+
+This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/guides/devscard/).
+
+This template uses Astro version `4.5.12`.
 
 ---
 
-## Deploy Your Own
+## Requirements
+
+Before using this template, you need to:
+
+- Have a [GitHub account](https://github.com/signup).
+  - Every push will be deployed automatically to the main branch in this repository to keep your project updated.
+
+> **Note**: this template uses [Application Accelerator](https://www.azion.com/en/documentation/products/build/edge-application/application-accelerator/),[Edge Functions](https://www.azion.com/en/documentation/products/build/edge-application/edge-functions/), and [Edge Cache](https://www.azion.com/en/documentation/products/build/edge-application/edge-cache/) and it could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+
+---
+
+## Deploy your own
 
 Deploy your own DevsCard project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/azion-community/devscard "Deploy with Azion")
 
----
-
-## Features
-
-- **✍️ Intellisense** — provide your data in TypeScript files, getting autocompletion and description of each property right in your IDE.
-- **📱 Responsiveness** — the resume is created and automatically tested to look good both on mobile and desktop devices.
-- **🌠 Assets optimization** — all images in your CV are minimized and resized automatically at build time.
-- **⚡️ Performance** — get 100 for all Lighthouse metrics, ensuring a great experience for visitors and a high score for search engines.
-- **📄 PDF generation** — generate an accompanying PDF version of your CV with one command.
-- **🔶 Built-in icon sets** — choose from over 100 000 [Iconify](https://iconify.design/) icons to represent your skills.
-- **🌍 I18n** — customize your resume's locale, date formatting, and used translations.
-- **🔎 SEO friendly** — the entire website is designed with SEO in mind. All SEO-related config properties are required and well-described.
-- **🏭 Favicons generation** — invoke one command to generate all favicons and full app manifest for your website.
-- **🛠 Data helpers** — use built-in helpers to define your skills/socials once and reuse them across the configuration.
-- **🔀 Data transformers** — utilize type-safe data transformers to create multiple variants of your resume without duplicating your data.
-
-## Documentation
-
-To learn how to set up your resume, go to:
-
-[https://devscard.gitbook.io/docs](https://devscard.gitbook.io/docs/setup-guide)
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/devscard/).

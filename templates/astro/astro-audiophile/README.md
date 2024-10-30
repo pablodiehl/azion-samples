@@ -1,51 +1,32 @@
-# Astro-commerce
+# Astro Audiophile
 
-An ecommerce template for small bussiness. Although this template showcases a store for audio devices, it could be used showcase any type of product.
+The **Astro Audiophile** template provides a quick option to create an e-commerce website based on the Astro framework. Even when the default visual is designed as a store or catalog for audio devices, it can be customized to showcase any type of product.
+
+This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
+
+This template uses Astro version `3.1.2`.
+
+> **Note**: this is a community template. Third-party or external developers created it, and Azion only enables the deployment in the Azion Edge Platform. Azion doesn't provide maintenance or support for the content itself but can assist you with any queries or issues you may encounter while deploying this template or using the platform.
+>
+> Join the Azion communities at [GitHub](https://github.com/aziontech) and [Discord](https://discord.com/channels/1112754829878624390/1113104727979348008) to learn, seek advice, and stay updated on trends.
 
 ---
 
-## Deploy Your Own
+## Requirements
+
+Before using this template, you need to:
+
+- Have a [GitHub account](https://github.com/signup).
+  - Every push will be deployed automatically to the main branch in this repository to keep your project updated.
+
+> **Note**: this template uses [Application Accelerator](https://www.azion.com/en/documentation/products/build/edge-application/application-accelerator/),[Edge Functions](https://www.azion.com/en/documentation/products/build/edge-application/edge-functions/), and [Edge Cache](https://www.azion.com/en/documentation/products/build/edge-application/edge-cache/) and it could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
+
+---
+
+## Deploy your own
 
 Deploy your own Astro Audiophile project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/azion-community/astro-audiophile "Deploy with Azion")
 
-
----
-
-## 🚀 Project Structure
-
-The project follows the atomic design structure [Learn more](https://bradfrost.com/blog/post/atomic-web-design/)
-
-Inside of this project, you'll see the following folders and files. They make up the main parts of the project.
-
-```text
-
-├── public/
-│   ├── assets/
-│   │   └── All images used.
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── atoms
-│   │   ├── molecules
-│   │   ├── organisms
-│   ├── design-system/
-│   ├── layouts/
-│   ├── pages/
-│   └── utils/
-└── package.json
-```
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/astro-ecommerce-collection/).
