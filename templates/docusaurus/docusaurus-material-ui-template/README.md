@@ -2,7 +2,7 @@
 
 Docusaurus is a static-site generator while Material UI is a popular React UI framework that provides reusable UI components. The **Docusaurus with Material UI** template allows you to deploy, directly on the edge, a Docusaurus website integrated with Material UI. 
 
-Docusarius-based templates are ideal for documentation features and other cases, including website, product pages, blog, and landing pages. The deployment of this template creates a GitHub repository containing your project, as well as an edge application and a domain to facilitate your access and management through Azion Edge Platform.
+Docusaurus-based templates are ideal for documentation features and other cases, including website, product pages, blog, and landing pages. The deployment of this template creates a GitHub repository containing your project, as well as an edge application and a domain to facilitate your access and management through Azion Edge Platform.
 
 This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [How to deploy the Docusaurus with Material UI template](https://www.azion.com/en/documentation/products/guides/docusaurus-material-ui-template/) guide.
 

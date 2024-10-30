@@ -10,6 +10,8 @@ This template uses Nuxt `3.13.0`.
 
 ## Requirements
 
+Before using this template, you need to:
+
 - Have a [GitHub account](https://github.com/signup).
   - Every push will be deployed automatically to the main branch in this repository to keep your project updated.
 
