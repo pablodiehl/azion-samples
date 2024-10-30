@@ -28,4 +28,4 @@ Deploy your own Upstash project with Azion.
 
 [![Deploy Button](/static/button.png)](https://console.azion.com/create/upstash/upstash-geolocation "Deploy with Azion")
 
-For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/upstash-geolocation-edgedeploy/).
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/upstash-geolocation-edgedeploy/). You can also learn how to deploy this template by watching [this video](https://youtu.be/ZvearWi5Vis?feature=shared) on Azion's YouTube channel.
