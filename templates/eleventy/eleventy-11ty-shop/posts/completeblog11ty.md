@@ -27,8 +27,6 @@ This source code is built with 11ty eleventy + bootstrap , you can download it f
 
 Congratulations you have successfully run your eleventy 11ty complete blog on your devices, now you can open on posts folder and other page then replace content or create new content with .md files and save it.
 
-For simple and fast work you can deploy on [vercel](https://vercel.com), firebase, netlify just register and create account, then you can visit our repo on github fork it, and now back to vercel / netlify dashboard - create new project - select github repo and deploy it.
-
 [Download and Documentation  →](https://www.hockeycomputindo.com/2022/03/eleventy-bootstrap-web-template-seo.html)
 
 And yeah... we have service for help you built website and simple blog with eleventy, click on button.
