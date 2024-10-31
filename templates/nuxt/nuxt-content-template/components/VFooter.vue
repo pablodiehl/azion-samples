@@ -13,7 +13,7 @@ const date = new Date();
           alt="Nuxt logo"
           class="w-12 h-12 mb-5 block mx-auto lg:mx-0"
         />
-        <h2 class="text-2xl font-bold mb-5">Templatr</h2>
+        <h2 class="text-2xl font-bold mb-5">Template</h2>
         <p class="text-xl text-gray-600 dark:text-gray-300">
           {{ $t("footer.description") }}
         </p>
@@ -160,7 +160,7 @@ const date = new Date();
     <footer
       class="pt-12 mx-auto px-6 lg:max-w-[75rem] text-gray-400 text-sm text-center lg:text-left"
     >
-      Templatr &copy; {{ date.getFullYear() }} by Shaun. All rights unreserved.
+      Template &copy; {{ date.getFullYear() }} by Shaun. All rights unreserved.
     </footer>
   </footer>
 </template>

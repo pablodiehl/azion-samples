@@ -46,7 +46,7 @@ onUnmounted(() => {
       <div class="text-xl font-bold mr-5">
         <NuxtLink :to="localePath('index')" class="flex items-center">
           <img src="/nuxt.svg" alt="Nuxt logo" class="block w-8 h-8" />
-          <span class="ml-1 block">Templatr</span>
+          <span class="ml-1 block">Template</span>
         </NuxtLink>
       </div>
       <ul class="hidden lg:flex gap-4 font-semibold text-green-600 text-sm">
