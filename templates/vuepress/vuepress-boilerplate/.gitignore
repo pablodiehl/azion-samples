@@ -1,0 +1,7 @@
+docs/.vuepress/
+node_modules
+
+# Azion
+.edge
+.vulcan
+
