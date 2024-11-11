@@ -1,9 +1,8 @@
-const { defineConfig } = require('azion');
-
-module.exports = defineConfig({
+module.exports = {
   build: {
     preset: {
-      name: 'angular',
-    },
+      name: 'angular'
+    }
   }
-})
+}
+
