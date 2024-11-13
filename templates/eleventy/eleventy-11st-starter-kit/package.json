@@ -30,7 +30,7 @@
   "bugs": {
     "url": "https://github.com/stefanfrede/11st-starter-kit/issues"
   },
-  "homepage": "https://11st-starter-kit.netlify.app",
+  "homepage": "https://wfp2iybds9.map.azionedge.net",
   "lint-staged": {
     "*.html": "prettier --write",
     "*.css": "stylelint --cache --fix",

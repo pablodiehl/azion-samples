@@ -15,9 +15,8 @@ import sanity from "@sanity/astro";
 const projectId = PUBLIC_SANITY_STUDIO_PROJECT_ID || PUBLIC_SANITY_PROJECT_ID;
 const dataset = PUBLIC_SANITY_STUDIO_DATASET || PUBLIC_SANITY_DATASET;
 
-// Change this depending on your hosting provider (Vercel, Netlify etc)
+// Change this depending on your hosting provider
 // https://docs.astro.build/en/guides/server-side-rendering/#adding-an-adapter
-import vercel from "@astrojs/vercel/serverless";
 
 // https://astro.build/config
 export default defineConfig({

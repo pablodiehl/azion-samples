@@ -11,5 +11,4 @@
 
 ## External links
 
-- [Example resume](https://devscard.netlify.app)
 - [GitHub repository](https://github.com/KonradSzwarc/devscard)

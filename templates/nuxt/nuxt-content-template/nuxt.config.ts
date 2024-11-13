@@ -92,6 +92,6 @@ export default defineNuxtConfig({
     },
   },
   image: {
-    provider: "netlify", // Use your own provider!
+    provider: "azion", // Use your own provider!
   },
 });

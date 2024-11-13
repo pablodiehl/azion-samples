@@ -37,34 +37,3 @@ To fill the CV with your data, go to the `src/data` directory. There you should 
 
 Within the main section, you will find an `action` property. It allows you to provide a pdf resume to download. If you don't have one, feel free to use our CV generator by invoking `npm run generate-pdf`. Generated resume will be placed in `public/cv.pdf` and use the same data as the web one. You can learn more about PDF generation [here](./pdf-generation.md).
 
-## 4. Deploy to Netlify
-
-{% hint style="info" %}
-As the resume is entirely static, you can deploy it to any hosting provider. In this guide, we use Netlify as it's free and easy to set up.
-{% endhint %}
-
-1\. Create a commit for your CV updates and push it to GitHub.
-
-2\. Create a [Netlify](https://www.netlify.com/) account.
-
-3\. Go to the "Sites" tab and choose "Import from Git".
-
-<figure><img src=".gitbook/assets/netlify-import-project.png" alt=""><figcaption></figcaption></figure>
-
-4\. Connect Netlify with your GitHub account.
-
-<figure><img src=".gitbook/assets/netlify-connect-github.png" alt=""><figcaption></figcaption></figure>
-
-5\. Pick a repository with your forked project
-
-<figure><img src=".gitbook/assets/netlify-pick-repository.png" alt=""><figcaption></figcaption></figure>
-
-6\. On the last step, go with the default settings suggested by Netlify and click "Deploy site".
-
-<figure><img src=".gitbook/assets/netlify-build-settings.png" alt=""><figcaption></figcaption></figure>
-
-7\. After around one minute, your resume will be live 🎉
-
-<figure><img src=".gitbook/assets/netlify-deployed-site.png" alt=""><figcaption></figcaption></figure>
-
-From now on, each push to `main` branch will cause redeploy of the Netlify website. You may want to go to the "Site settings" tab to update your site name or even [set up your domain](https://youtu.be/bY7Tkh9Vz8I).
