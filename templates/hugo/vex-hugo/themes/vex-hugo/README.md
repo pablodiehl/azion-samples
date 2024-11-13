@@ -75,14 +75,6 @@ $ hugo server --themesDir ../..
 
 Or Check out [Full Documentation](https://docs.gethugothemes.com/vex/?ref=github).
 
-
-## ⚙️Deployment and hosting
-
-[![Deploy to
-Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/themefisher/vex-hugo)
-
-Follow the steps.
-
 <!-- reporting issue -->
 ## 🐞Reporting Issues
 

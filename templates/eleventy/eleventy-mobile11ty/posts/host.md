@@ -13,10 +13,7 @@ tags:
   - deploy eleventy
   - Static host
   - github
-  - heroku
-  - firebase
-  - surge
-  - netlify
+  - azion
 layout: layouts/post.njk
 ---
 
@@ -26,13 +23,7 @@ After your project work is finished, then you can deploy to static hosts, there 
 
 The following is a static list of hosting that is commonly used for site deployment.
 
-+ [Netlify](https://www.netlify.com/)
-+ [Vercel](https://vercel.com)
-+ [Heroku](https://heroku.com)
-+ [Firebase](https://firebase.google.com/)
-+ [Cloudflare](https://cloudflare.com/)
-+ [Surge](https://surge.sh/)
-+ [Github]()
++ [Azion](https://www.azion.com/)
 
 Please read the documentation on each vendor's site above to get your site online
 
