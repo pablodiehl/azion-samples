@@ -26,6 +26,9 @@ jobs:
 
       - name: Install NPM dependencies
         run: npm i
+
+      - name: Update PDF file
+        run: npx --yes bun@latest ./scripts/create-pdf.ts
         
       - name: Install Azion CLI
         run: |
