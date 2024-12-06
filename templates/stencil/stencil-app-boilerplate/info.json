@@ -1,0 +1,7 @@
+{
+  "name": "Stencil App Boilerplate",
+  "message": "Minimal starter for building a Stencil app or website",
+  "preset": "stencil",
+  "mode": "deliver",
+  "path": "/stencil-app-boilerplate"
+}
