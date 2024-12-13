@@ -4,7 +4,8 @@ import { respond2User,
   processEventStream, 
   createTransformStream, 
   transformToChatCompletions, 
-  validateRequestBody } from "./src/helper/utils";
+  validateRequestBody, 
+  validateStreamForErrors} from "./src/helper/utils";
 import { v4 as uuidv4 } from 'uuid';
 import { AzionEdgeTracer } from './src/helper/tracer';
 
@@ -69,14 +70,16 @@ async function streamGraph(
 
     processEventStream(userEventStream, writer, encoder, runId);
 
+    // Check if the stream contains an error
+    const validStream = await validateStreamForErrors(readable);
+
     // Process the db stream to update the tracer
     tracer.run(dbStream);
 
     // Return the response to the user
-    return await respond2User('POST', readable);
-
+    return await respond2User('POST', validStream);
   } catch (error) {
-    const errorMessage = "Error streaming graph: " + JSON.stringify(error)
+    const errorMessage = "Error streaming graph: " + error
     console.error(errorMessage)
     return await respond2User('POST', errorMessage, true);
   }
