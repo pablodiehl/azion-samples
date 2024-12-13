@@ -18,6 +18,11 @@ export default async function main(
 ): Promise<Response> {
   // Get the request from the event
   const request = event.request;
+  const args = {
+    systemPromptTemplate: event.args.SYSTEM_PROMPT_TEMPLATE,
+    messageStoreDbName: event.args.MESSAGE_STORE_DB_NAME,
+    messageStoreTableName: event.args.MESSAGE_STORE_TABLE_NAME,
+  }
 
   // Return early if not a POST request
   if (request.method != 'POST') {
@@ -40,10 +45,10 @@ export default async function main(
 
   // Handle streaming vs non-streaming responses
   if (stream) {
-    return streamGraph(messages, runId);
+    return streamGraph(messages, runId, args);
   } 
 
-  return invokeGraph(messages, runId);
+  return invokeGraph(messages, runId, args);
 }
 
 /**
@@ -52,15 +57,18 @@ export default async function main(
  */
 async function streamGraph(
   messages: Message[],
-  runId: string
+  runId: string,
+  args: Record<string, any>
 ): Promise<Response> {
-  let tracer = new AzionEdgeTracer('stream')
+  let tracer = new AzionEdgeTracer('stream', args.messageStoreDbName, args.messageStoreTableName)
   try {
     // Update the tracer with the input messages
     tracer.updateInput(messages, runId)
 
     // Stream the events from the graph
-    const eventStreams = graph.streamEvents({ messages }, { version: "v2" });
+    const eventStreams = graph.streamEvents({ messages }, { version: "v2", configurable: {
+      systemPrompt: args.systemPromptTemplate
+    } });
 
     // Since the response body cannot be consumed more than once, we need to split the stream into two streams
     const [userEventStream, dbStream] = eventStreams.tee();
@@ -91,15 +99,18 @@ async function streamGraph(
  */
 async function invokeGraph(
   messages: Message[],
-  runId: string
+  runId: string,
+  args: Record<string, any>
 ): Promise<Response> {
-  let tracer = new AzionEdgeTracer('invoke')
+  let tracer = new AzionEdgeTracer('invoke', args.messageStoreDbName, args.messageStoreTableName)
   try {
     // Update the tracer with the input messages
     tracer.updateInput(messages, runId)
 
     // Invoke the graph
-    const invokeResponse = await graph.invoke({ messages });
+    const invokeResponse = await graph.invoke({ messages }, { configurable: {
+      systemPrompt: args.systemPromptTemplate
+    } });
 
     // Update the tracer with the output messages
     tracer.run(invokeResponse.messages)

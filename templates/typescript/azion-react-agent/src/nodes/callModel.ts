@@ -18,8 +18,8 @@ export async function callModel(
 
   const { messages } = state
   
-  messages.push(new SystemMessage({content: SYSTEM_PROMPT_TEMPLATE}))
-
+  messages.push(new SystemMessage({content: config.configurable?.systemPrompt || SYSTEM_PROMPT_TEMPLATE}))
+  
   const model = new ChatOpenAI({
     model: OPENAI_MODEL,
     temperature: 0.3,

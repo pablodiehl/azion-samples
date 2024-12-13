@@ -1,5 +1,4 @@
 import { Message, StreamEvent } from "../types";
-import { MESSAGE_STORE_DB_NAME, MESSAGE_STORE_TABLE_NAME } from "./config";
 import { createDatabase, useExecute } from "azion/sql";
 
 /**
@@ -22,11 +21,11 @@ export class AzionEdgeTracer {
   mode: 'stream' | 'invoke'
   constructor(
     mode: 'stream' | 'invoke',
-    databaseName?: string,
-    tableName?: string
+    databaseName: string,
+    tableName: string
   ) {
-    this.databaseName = databaseName || MESSAGE_STORE_DB_NAME
-    this.tableName = tableName || MESSAGE_STORE_TABLE_NAME
+    this.databaseName = databaseName
+    this.tableName = tableName
     this.runId = ''
     this.runMetadata = []
     this.inputMessages = []
