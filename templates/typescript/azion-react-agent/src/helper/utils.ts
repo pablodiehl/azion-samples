@@ -1,4 +1,3 @@
-import { IterableReadableStream } from "@langchain/core/utils/stream";
 import { ChatCompletionInvokeResponse, ChatCompletionStreamResponse, StreamEvent } from "../types";
 import { AIMessageChunk } from "@langchain/core/messages";
 import { RequestChatBodySchema } from "./schema";
@@ -29,23 +28,12 @@ export async function respond2User(
   }
 
   if (method === 'POST') {
-    const streamableResponse = new Response(response);
-    const responseBody = await streamableResponse.text();
-    let statusCode = 200;
-
-    // Exception handling workaround ദ്ദി(ᵔᗜᵔ)
-    if (responseBody.includes('error: {"exception":')) {
-      statusCode = 500;
-    }
-
-    return new Response(responseBody, {
-      headers: {
+    
+    return new Response(response, {headers: {
         'Content-Type': 'text/event-stream',
         'Cache-Control': 'no-cache',
         'Connection': 'keep-alive'
-      },
-      status: statusCode
-    })
+    },status: 200})
   }
 
   return new Response('Method not allowed', {status: 405})
@@ -116,7 +104,7 @@ export async function processEventStream(
  
     await writer.write(encoder.encode('data: [DONE]\n\n'));
   } catch (error) {
-    console.error("Error processing event stream:",error);
+    console.error("Error streaming graph:",error);
     await writer.write(encoder.encode(`error: {"exception": "${error}"}\n\n`));
   } finally {
     await writer.close();
@@ -136,6 +124,37 @@ export function createTransformStream(
   const writer = writable.getWriter();
   const encoder = new TextEncoder();
   return { readable, writer, encoder };
+}
+
+/**
+ * Checks if a ReadableStream contains an error message and returns the original stream
+ * @param {ReadableStream} stream - The stream to check for errors
+ * @returns {Promise<ReadableStream>} The original stream
+ * @throws {Error} If an error message is found in the stream
+ */
+export async function validateStreamForErrors(
+  stream: ReadableStream
+): Promise<ReadableStream> {
+  try {
+    // Split the stream into two so we don't consume the original
+    const [checkStream, originalStream] = stream.tee();
+    
+    const reader = checkStream.getReader();
+    const { value } = await reader.read();
+    
+    // Convert the stream chunk to string
+    const text = new TextDecoder().decode(value);
+    
+    // Throw error if error message found
+    if (text.toLowerCase().includes('error: {"exception": ')) {
+      throw new Error(text);
+    }
+
+    return originalStream;
+  } catch (error) {
+    console.error('Error validating stream for errors:', error);
+    throw error;
+  }
 }
 
 // 

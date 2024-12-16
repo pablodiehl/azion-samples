@@ -8,6 +8,7 @@ const MessageSchema = z.object({
 const RequestChatBodySchema = z.object({
   messages: z.array(MessageSchema),
   stream: z.boolean().default(false).optional(),
+  session_id: z.string().optional(),
   stream_options: z
     .object({
       include_usage: z.boolean().optional(),

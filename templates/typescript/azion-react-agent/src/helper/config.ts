@@ -4,10 +4,5 @@ export const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
 export const EMBEDDING_MODEL = process.env.EMBEDDING_MODEL || 'text-embedding-3-small'
 export const OPENAI_MODEL = process.env.OPENAI_MODEL || 'gpt-4o'
 
-export const MESSAGE_STORE_DB_NAME = process.env.MESSAGE_STORE_DB_NAME || 'messagestore'
-export const MESSAGE_STORE_TABLE_NAME = process.env.MESSAGE_STORE_TABLE_NAME || 'azion_react_agent'
-
 export const VECTOR_STORE_DB_NAME = process.env.VECTOR_STORE_DB_NAME || 'vectorstore'
 export const VECTOR_STORE_TABLE_NAME = process.env.VECTOR_STORE_TABLE_NAME || 'azion_react_agent_vector_store'
-
-export const SYSTEM_PROMPT_TEMPLATE = process.env.SYSTEM_PROMPT_TEMPLATE

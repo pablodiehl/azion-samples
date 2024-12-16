@@ -4,7 +4,8 @@ import { respond2User,
   processEventStream, 
   createTransformStream, 
   transformToChatCompletions, 
-  validateRequestBody } from "./src/helper/utils";
+  validateRequestBody, 
+  validateStreamForErrors} from "./src/helper/utils";
 import { v4 as uuidv4 } from 'uuid';
 import { AzionEdgeTracer } from './src/helper/tracer';
 
@@ -17,6 +18,12 @@ export default async function main(
 ): Promise<Response> {
   // Get the request from the event
   const request = event.request;
+  const args = {
+    systemPromptTemplate: event.args.SYSTEM_PROMPT_TEMPLATE,
+    messageStoreDbName: event.args.MESSAGE_STORE_DB_NAME,
+    messageStoreTableName: event.args.MESSAGE_STORE_TABLE_NAME,
+    session_id: uuidv4(),
+  }
 
   // Return early if not a POST request
   if (request.method != 'POST') {
@@ -33,16 +40,22 @@ export default async function main(
   }
 
   // Extract messages and stream flag from parsed body
-  const { messages, stream } = parsedBody;
+  const { messages, stream, session_id } = parsedBody;
+
+  // If session_id is provided, use it
+  if (session_id) {
+    args.session_id = session_id
+  }
+
   // Generate unique run ID
   const runId = uuidv4();
 
   // Handle streaming vs non-streaming responses
   if (stream) {
-    return streamGraph(messages, runId);
+    return streamGraph(messages, runId, args);
   } 
 
-  return invokeGraph(messages, runId);
+  return invokeGraph(messages, runId, args);
 }
 
 /**
@@ -51,15 +64,18 @@ export default async function main(
  */
 async function streamGraph(
   messages: Message[],
-  runId: string
+  runId: string,
+  args: Record<string, any>
 ): Promise<Response> {
-  let tracer = new AzionEdgeTracer('stream')
+  let tracer = new AzionEdgeTracer('stream', args.messageStoreDbName, args.messageStoreTableName, args.session_id)
   try {
     // Update the tracer with the input messages
     tracer.updateInput(messages, runId)
 
     // Stream the events from the graph
-    const eventStreams = graph.streamEvents({ messages }, { version: "v2" });
+    const eventStreams = graph.streamEvents({ messages }, { version: "v2", configurable: {
+      systemPrompt: args.systemPromptTemplate
+    } });
 
     // Since the response body cannot be consumed more than once, we need to split the stream into two streams
     const [userEventStream, dbStream] = eventStreams.tee();
@@ -69,14 +85,16 @@ async function streamGraph(
 
     processEventStream(userEventStream, writer, encoder, runId);
 
+    // Check if the stream contains an error
+    const validStream = await validateStreamForErrors(readable);
+
     // Process the db stream to update the tracer
     tracer.run(dbStream);
 
     // Return the response to the user
-    return await respond2User('POST', readable);
-
+    return await respond2User('POST', validStream);
   } catch (error) {
-    const errorMessage = "Error streaming graph: " + JSON.stringify(error)
+    const errorMessage = "Error streaming graph: " + error
     console.error(errorMessage)
     return await respond2User('POST', errorMessage, true);
   }
@@ -88,15 +106,18 @@ async function streamGraph(
  */
 async function invokeGraph(
   messages: Message[],
-  runId: string
+  runId: string,
+  args: Record<string, any>
 ): Promise<Response> {
-  let tracer = new AzionEdgeTracer('invoke')
+  let tracer = new AzionEdgeTracer('invoke', args.messageStoreDbName, args.messageStoreTableName, args.session_id)
   try {
     // Update the tracer with the input messages
     tracer.updateInput(messages, runId)
 
     // Invoke the graph
-    const invokeResponse = await graph.invoke({ messages });
+    const invokeResponse = await graph.invoke({ messages }, { configurable: {
+      systemPrompt: args.systemPromptTemplate
+    } });
 
     // Update the tracer with the output messages
     tracer.run(invokeResponse.messages)
