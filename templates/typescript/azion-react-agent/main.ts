@@ -22,6 +22,7 @@ export default async function main(
     systemPromptTemplate: event.args.SYSTEM_PROMPT_TEMPLATE,
     messageStoreDbName: event.args.MESSAGE_STORE_DB_NAME,
     messageStoreTableName: event.args.MESSAGE_STORE_TABLE_NAME,
+    session_id: uuidv4(),
   }
 
   // Return early if not a POST request
@@ -39,7 +40,13 @@ export default async function main(
   }
 
   // Extract messages and stream flag from parsed body
-  const { messages, stream } = parsedBody;
+  const { messages, stream, session_id } = parsedBody;
+
+  // If session_id is provided, use it
+  if (session_id) {
+    args.session_id = session_id
+  }
+
   // Generate unique run ID
   const runId = uuidv4();
 
@@ -60,7 +67,7 @@ async function streamGraph(
   runId: string,
   args: Record<string, any>
 ): Promise<Response> {
-  let tracer = new AzionEdgeTracer('stream', args.messageStoreDbName, args.messageStoreTableName)
+  let tracer = new AzionEdgeTracer('stream', args.messageStoreDbName, args.messageStoreTableName, args.session_id)
   try {
     // Update the tracer with the input messages
     tracer.updateInput(messages, runId)
@@ -102,7 +109,7 @@ async function invokeGraph(
   runId: string,
   args: Record<string, any>
 ): Promise<Response> {
-  let tracer = new AzionEdgeTracer('invoke', args.messageStoreDbName, args.messageStoreTableName)
+  let tracer = new AzionEdgeTracer('invoke', args.messageStoreDbName, args.messageStoreTableName, args.session_id)
   try {
     // Update the tracer with the input messages
     tracer.updateInput(messages, runId)

@@ -19,10 +19,13 @@ export class AzionEdgeTracer {
   outputMessages: string
   /** Mode flag indicating stream vs invoke */
   mode: 'stream' | 'invoke'
+  /** Session id */
+  sessionId: string
   constructor(
     mode: 'stream' | 'invoke',
     databaseName: string,
-    tableName: string
+    tableName: string,
+    sessionId: string
   ) {
     this.databaseName = databaseName
     this.tableName = tableName
@@ -31,6 +34,7 @@ export class AzionEdgeTracer {
     this.inputMessages = []
     this.outputMessages = ''
     this.mode = mode
+    this.sessionId = sessionId
   }
 
   /**
@@ -107,9 +111,9 @@ export class AzionEdgeTracer {
    * Save the trace into the database
    */
   async save() {
-    console.log("Saving trace into ", this.databaseName)
+    console.log("Saving trace into ", this.databaseName, "for session ", this.sessionId)
     const createdAt = new Date().toISOString()
-    const statements = [`INSERT INTO ${this.tableName} (run_id, input_messages, output_messages, run_metadata, created_at) VALUES ('${this.runId}', '${this.inputMessages}', '${this.outputMessages}', '${this.runMetadata}', '${createdAt}')`]
+    const statements = [`INSERT INTO ${this.tableName} (session_id, run_id, input_messages, output_messages, run_metadata, created_at) VALUES ('${this.sessionId}', '${this.runId}', '${this.inputMessages}', '${this.outputMessages}', '${this.runMetadata}', '${createdAt}')`]
     const { data, error } = await useExecute(this.databaseName,statements)
     if (error) {
       console.error("Error saving trace:", error)
@@ -119,9 +123,8 @@ export class AzionEdgeTracer {
         if (createDbError) {
           console.error("Error creating database:", createDbError)
         }
-        await new Promise(resolve => setTimeout(resolve, 10000))
-        const createTableStatements = [`CREATE TABLE IF NOT EXISTS ${this.tableName} (id INTEGER PRIMARY KEY AUTOINCREMENT, run_id TEXT, input_messages TEXT, output_messages TEXT, run_metadata TEXT, created_at TEXT)`]
-        console.log(createTableStatements)
+        await new Promise(resolve => setTimeout(resolve, 15000))
+        const createTableStatements = [`CREATE TABLE IF NOT EXISTS ${this.tableName} (id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT, run_id TEXT, input_messages TEXT, output_messages TEXT, run_metadata TEXT, created_at TEXT)`]
         const { data, error: createTableError } = await useExecute(this.databaseName,createTableStatements)
         if (createTableError) {
           console.error("Error creating table:", createTableError)
