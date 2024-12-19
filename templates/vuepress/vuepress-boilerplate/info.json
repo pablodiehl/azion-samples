@@ -1,0 +1,8 @@
+{
+  "name": "VuePress Boilerplate",
+  "message": "Deploy new VuePress applications to run directly on the edge",
+  "preset": "vuepress",
+  "mode": "deliver",
+  "path": "/vuepress-boilerplate"
+}
+
