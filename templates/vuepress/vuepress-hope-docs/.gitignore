@@ -1,0 +1,10 @@
+**/node_modules/**
+**/.vuepress/.cache/**
+**/.vuepress/.temp/**
+dist/
+.npmrc
+.env
+
+# Azion
+.edge
+.vulcan
