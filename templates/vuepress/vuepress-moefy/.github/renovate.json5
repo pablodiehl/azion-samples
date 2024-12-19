@@ -1,0 +1,8 @@
+// https://docs.renovatebot.com/configuration-options/
+{
+  extends: ["github>SigureMo/renovate-config"],
+  "git-submodules": {
+    enabled: true,
+  },
+  ignoreDeps: ["vue", "vue-server-renderer", "vue-template-compiler"],
+}
