@@ -1,8 +1,8 @@
 import { dateSorter } from '@vuepress/helper';
 import { hopeTheme } from 'vuepress-theme-hope';
 
-import { enNavbar, zhNavbar } from './navbar/index.js';
-import { enSidebar, zhSidebar } from './sidebar/index.js';
+import { enNavbar } from './navbar/index.js';
+import { enSidebar } from './sidebar/index.js';
 
 export default hopeTheme(
   {
@@ -85,41 +85,11 @@ export default hopeTheme(
           editLink: 'Edit this page on GitHub',
         },
       },
-
-      /**
-       * Chinese locale config
-       */
-      '/zh/': {
-        // Navbar
-        navbar: zhNavbar,
-
-        // Sidebar
-        sidebar: zhSidebar,
-
-        footer: '默认页脚',
-
-        displayFooter: true,
-
-        blog: {
-          description: '一个前端开发者',
-          intro: '/zh/intro.html',
-        },
-
-        blogLocales: {
-          tutorial: '教程',
-        },
-
-        // Page meta
-        metaLocales: {
-          editLink: '在 GitHub 上编辑此页',
-        },
-      },
     },
 
     encrypt: {
       config: {
-        '/demo/encrypt.html': ['1234'],
-        '/zh/demo/encrypt.html': ['1234'],
+        '/demo/encrypt.html': ['1234']
       },
     },
 
