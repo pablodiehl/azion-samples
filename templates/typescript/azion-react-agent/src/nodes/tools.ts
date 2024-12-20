@@ -24,7 +24,7 @@ const entityExtractor = new ChatOpenAI({
   temperature: 0
 })
 
-// AzionRetriever - a tool that retrieves information about
+// AzionRetriever - a tool that retrieves information from the vector database (Edge SQL)
 const azionRetriever = new AzionRetriever(embeddingModel, entityExtractor,
   {dbName:VECTOR_STORE_DB_NAME,
    vectorTable:VECTOR_STORE_TABLE_NAME,
