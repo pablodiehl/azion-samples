@@ -24,7 +24,7 @@ const entityExtractor = new ChatOpenAI({
   temperature: 0
 })
 
-// AzionRetriever - a tool that retrieves information about panvel products (medicamentos)
+// AzionRetriever - a tool that retrieves information from the vector database (Edge SQL)
 const azionRetriever = new AzionRetriever(embeddingModel, entityExtractor,
   {dbName:VECTOR_STORE_DB_NAME,
    vectorTable:VECTOR_STORE_TABLE_NAME,
@@ -32,7 +32,6 @@ const azionRetriever = new AzionRetriever(embeddingModel, entityExtractor,
    ftsK:1,
    similarityK:1,
    searchType:"hybrid",
-   metadataItems:['product_short_name','product_description'],
    promptEntityExtractor:'Extraia as entidades relevantes para a busca. Apenas responda com as entidades, sem explicações e pontuação.'
   });
 

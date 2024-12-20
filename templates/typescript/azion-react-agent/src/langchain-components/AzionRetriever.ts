@@ -119,7 +119,7 @@ export interface AzionRetrieverArgs extends BaseRetrieverInput {
  *   ftsK: 2,
  *   dbName: 'my_docs',
  *   metadataItems: ['category', 'author'],
- *   similarityTable: 'documents',
+ *   vectorTable: 'documents',
  *   ftsTable: 'documents_fts',
  *   filters: [
  *     { operator: '=', column: 'status', value: 'published' }
@@ -136,7 +136,7 @@ export interface AzionRetrieverArgs extends BaseRetrieverInput {
  *   searchType: 'similarity',
  *   similarityK: 5,
  *   dbName: 'my_docs',
- *   similarityTable: 'documents'
+ *   vectorTable: 'documents'
  * });
  * 
  * // Customize entity extraction prompt
