@@ -123,7 +123,7 @@ export class AzionEdgeTracer {
         if (createDbError) {
           console.error("Error creating database:", createDbError)
         }
-        await new Promise(resolve => setTimeout(resolve, 15000))
+        await new Promise(resolve => setTimeout(resolve, 20000))
         const createTableStatements = [`CREATE TABLE IF NOT EXISTS ${this.tableName} (id INTEGER PRIMARY KEY AUTOINCREMENT, session_id TEXT, run_id TEXT, input_messages TEXT, output_messages TEXT, run_metadata TEXT, created_at TEXT)`]
         const { data, error: createTableError } = await useExecute(this.databaseName,createTableStatements)
         if (createTableError) {
@@ -132,6 +132,9 @@ export class AzionEdgeTracer {
         await this.save()
       }
     }
-    console.log("Trace saved successfully")
+    
+    if (data) {
+      console.log("Trace saved successfully")
+    }
   }
 }
