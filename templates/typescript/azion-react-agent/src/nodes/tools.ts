@@ -1,17 +1,10 @@
-import { TavilySearchResults } from "@langchain/community/tools/tavily_search";
-import { EMBEDDING_MODEL, TAVILY_API_KEY, VECTOR_STORE_DB_NAME, VECTOR_STORE_TABLE_NAME } from "../helper/config.js";
+import { EMBEDDING_MODEL, VECTOR_STORE_DB_NAME, VECTOR_STORE_TABLE_NAME } from "../helper/config.js";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { ChatOpenAI } from "@langchain/openai";
 import { AzionRetriever } from "../langchain-components/AzionRetriever";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import { createRetrieverTool } from "langchain/tools/retriever";
 import { MessagesAnnotation } from "@langchain/langgraph";
-
-// TavilySearchResults - a tool that searches the web for information
-const searchTavily = new TavilySearchResults({
-  maxResults: 3,
-  apiKey: TAVILY_API_KEY,
-});
 
 // Embeddings model - it should be the same as the one used with the vector store documents
 const embeddingModel = new OpenAIEmbeddings({
@@ -40,6 +33,6 @@ const retrieverTool = createRetrieverTool(azionRetriever,{
   description: "Ferramenta para buscar informacoes no banco de dados da Azion"
 });
 
-export const TOOLS = [retrieverTool, searchTavily];
+export const TOOLS = [retrieverTool];
 
 export const toolNode = new ToolNode<typeof MessagesAnnotation.State>(TOOLS)
