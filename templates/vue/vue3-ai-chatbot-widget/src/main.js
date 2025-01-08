@@ -14,49 +14,19 @@ const themeMap = {
   dark: 'dark'
 }
 
-const decodeOrDefault = (value, defaultValue) => {
-  try {
-    return value ? atob(value) : defaultValue
-  } catch (e) {
-    console.warn(`Erro ao decodificar valor: ${value}. Usando valor padrão.`, e)
-    return defaultValue
-  }
-}
-
-const parseJsonOrDefault = (value, defaultValue) => {
-  try {
-    return JSON.parse(value)
-  } catch (e) {
-    console.warn(`Erro ao parsear JSON: ${value}. Usando valor padrão.`, e)
-    return JSON.parse(defaultValue)
-  }
-}
-
-const themeDefault = decodeOrDefault(import.meta.env.VITE_THEME, themeMap.light)
-const serverUrlDefault = decodeOrDefault(
-  import.meta.env.VITE_COPILOT_ENDPOINT,
-  'https://ai.azion.com/copilot/chat/completions'
-)
+const themeDefault = themeMap.light
+const serverUrlDefault = import.meta.env.VITE_COPILOT_ENDPOINT
 const suggestionsDefault = `[
   {
     "icon": "pi pi-question-circle",
-    "title": "How can I get started?",
-    "context": "How do I build an edge application?"
-  }, 
-  {
-    "icon": "pi pi-shield",
-    "title": "How do I protect my application?",
-    "context": "How do I protect my application?"
+    "title": "How can you help me?",
+    "context": "How can you help me?"
   }
 ]`
-console.log(import.meta.env.VITE_SUGGESTIONS)
 
-const suggestionsOptionsDefault = parseJsonOrDefault(
-  decodeOrDefault(import.meta.env.VITE_SUGGESTIONS, suggestionsDefault),
-  suggestionsDefault
-)
-const titleDefault = decodeOrDefault(import.meta.env.VITE_TITLE, '')
-const subTitleDefault = decodeOrDefault(import.meta.env.VITE_SUBTITLE, 'How can I help you today?')
+const suggestionsOptionsDefault = JSON.parse(suggestionsDefault)
+const titleDefault = import.meta.env.VITE_TITLE || ''
+const subTitleDefault = 'Your AI-Powered Copilot'
 
 const CONFIG_DEFAULT = {
   theme: themeDefault,
