@@ -9,7 +9,6 @@ Deploy AI Agents at the edge with Typescript, powered by Azion's Edge Computing 
    - [Azion](https://www.console.azion.com/)
    - [LangSmith](https://smith.langchain.com/) 
    - [OpenAI](https://platform.openai.com/)
-   - [Tavily](https://tavily.ai/)
 
 2. Install Azion CLI
    ```bash
