@@ -10,6 +10,9 @@ node_modules
 # Eleventy cached API results
 .cache
 
+# local env files
+.env
+
 # azion
 .edge
 .vulcan

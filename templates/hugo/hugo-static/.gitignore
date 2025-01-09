@@ -1,3 +1,4 @@
 .edge/
 .hugo_build.lock
 .vulcan
+.env

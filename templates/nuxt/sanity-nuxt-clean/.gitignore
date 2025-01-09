@@ -6,6 +6,7 @@ node_modules
 .output
 dist
 .DS_Store
+.env
 
 # Azion
 .edge
