@@ -1,47 +1,32 @@
-# Stencil Ionic App Starter
+# Stencil PWA Boilerplate
 
-Ionic PWA starter with tabs layout and routes.
+With the **Stencil PWA Boilerplate** template, you can start a project using the [Stencil](https://stenciljs.com/docs/introduction) framework in the [Ionic PWA](https://ionic.io/pwa) format, deploying it to the edge in just a few steps. The template also creates a GitHub repository containing your project, an edge application, and a domain to facilitate your access and management through the Azion Edge Platform.
+ 
+Stencil, combined with the Ionic PWA toolkit, offers a robust solution for building fast, modern Progressive Web Apps. It provides tools to create reusable components, leverage modern web APIs, and deliver apps with native-like performance and offline capabilities.
 
-Demo: https://stencil-ionic-starter.surge.sh
 
-## About Stencil
+This repository is an example of the new GitHub repository created during the deployment. For a more detailed step-by-step to deploy this template through Azion's platform, check the [How to deploy the Stencil PWA Boilerplate](https://www.azion.com/en/documentation/products/guides/stencil-pwa-boilerplate/) guide.
+ 
+This template uses Stencil version `4.22.2`.
+---
 
-Stencil is a compiler for building fast web apps using Web Components.
+## Requirements
 
-Stencil combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool. Stencil takes TypeScript, JSX, a tiny virtual DOM layer, efficient one-way data binding, an asynchronous rendering pipeline (similar to React Fiber), and lazy-loading out of the box, and generates 100% standards-based Web Components that run in any browser supporting the Custom Elements v1 spec.
+Before using this template, you need to:
 
-Stencil components are just Web Components, so they work in any major framework or with no framework at all. In many cases, Stencil can be used as a drop in replacement for traditional frontend frameworks given the capabilities now available in the browser, though using it as such is certainly not required.
+- Have a [GitHub account](https://github.com/signup).
+ - Every push will be deployed automatically to the main branch in this repository to keep your project updated.
 
-Stencil also enables a number of key capabilities on top of Web Components, in particular Server Side Rendering (SSR) without the need to run a headless browser, pre-rendering, and objects-as-properties (instead of just strings).
+> **Note**: this template uses [Application Accelerator](https://www.azion.com/en/documentation/products/build/edge-application/application-accelerator/), [Edge Functions](https://www.azion.com/en/documentation/products/build/edge-application/edge-functions/), and [Edge Cache](https://www.azion.com/en/documentation/products/build/edge-application/edge-cache/) and it could generate usage-related costs. Check the [pricing page](https://www.azion.com/en/pricing/) for more information.
 
-## Getting Started
+Fill in the fields presented on the configuration form and deploy the template. This will create a new edge application with its configurations, which you can edit and manage later. It also creates a repository in your GitHub account, based on the template, allowing you to maintain control over the project.
 
-To start a new project using Stencil, clone this repo to a new directory:
+---
 
-```bash
-npm init stencil ionic-pwa
-```
+## Deploy your own
 
-and run:
+Deploy your own Stencil PWA Boilerplate project with Azion.
 
-```bash
-npm start
-```
+[![Deploy Button](https://www.azion.com/button/)](https://console.azion.com/create/stencil/stencil-pwa-boilerplate "Deploy with Azion")
 
-To build the app for production, run:
-
-```bash
-npm run build
-```
-
-To run the unit tests once, run:
-
-```
-npm test
-```
-
-To run the unit tests and watch for file changes during development, run:
-
-```
-npm run test.watch
-```
+For a more detailed step-by-step, check the [documentation](https://www.azion.com/en/documentation/products/guides/stencil-pwa-boilerplate/).
