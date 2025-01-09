@@ -12,6 +12,9 @@ stats.html
 public/favicons
 *.generated.astro
 
+# local env files
+.env
+
 # Azion
 .edge
 .vulcan

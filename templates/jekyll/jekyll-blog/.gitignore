@@ -6,3 +6,4 @@ vendor
 .edge
 .vulcan
 node_modules
+.env

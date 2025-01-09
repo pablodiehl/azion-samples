@@ -5,6 +5,7 @@ nuxt.d.ts
 .output
 .idea
 dist
+.env
 
 # azion
 .edge

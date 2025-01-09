@@ -1,5 +1,6 @@
 docs/.vuepress/
 node_modules
+.env
 
 # Azion
 .edge

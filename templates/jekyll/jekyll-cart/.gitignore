@@ -13,6 +13,7 @@ Gemfile.lock
 node_modules
 npm-debug.log*
 .nova
+.env
 
 # azion
 .edge
