@@ -33,6 +33,10 @@ jobs:
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
 
+      - name: Create .env file
+        run: |
+          echo "VITE_APP_BUTTER_CMS_API_KEY=${{ secrets.VITE_APP_BUTTER_CMS_API_KEY }}" >> .env
+
       - name: Azion Action Deploy
         run: |
           azion -t ${{ secrets.AZION_PERSONAL_TOKEN }}

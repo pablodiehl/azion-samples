@@ -25,13 +25,17 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: yarn
+        run: npm i
 
       - name: Install Azion CLI
         run: |
           curl -o azionlinux https://downloads.azion.com/linux/x86_64/azion
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
+
+      - name: Create .env file
+        run: |
+          echo "NG_APP_ANGULAR_BUTTER_CMS_API_KEY=${{ secrets.NG_APP_ANGULAR_BUTTER_CMS_API_KEY }}" >> .env
 
       - name: Azion Action Deploy
         run: |
