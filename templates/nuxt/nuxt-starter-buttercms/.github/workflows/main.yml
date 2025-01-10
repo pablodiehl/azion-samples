@@ -25,13 +25,17 @@ jobs:
           node-version: 18
 
       - name: Install dependencies
-        run: yarn
+        run: npm i
 
       - name: Install Azion CLI
         run: |
           curl -o azionlinux https://downloads.azion.com/linux/x86_64/azion
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
+
+      - name: Create .env file
+        run: |
+          echo "NUXT_ENV_BUTTER_API_TOKEN=${{ secrets.NUXT_ENV_BUTTER_API_TOKEN }}" >> .env
 
       - name: Azion Action Deploy
         run: |
