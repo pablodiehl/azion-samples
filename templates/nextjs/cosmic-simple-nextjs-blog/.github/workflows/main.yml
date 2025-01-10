@@ -33,6 +33,11 @@ jobs:
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
 
+      - name: Create .env file
+        run: |
+          echo "COSMIC_BUCKET_SLUG=${{ secrets.COSMIC_BUCKET_SLUG }}" >> .env
+          echo "COSMIC_READ_KEY=${{ secrets.COSMIC_READ_KEY }}" >> .env
+
       - name: Azion Action Deploy
         run: |
           azion -t ${{ secrets.AZION_PERSONAL_TOKEN }}
