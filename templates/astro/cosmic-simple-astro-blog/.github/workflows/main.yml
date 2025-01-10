@@ -24,14 +24,19 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install NPM dependencies
-        run: npm i
+      - name: Install dependencies
+        run: pnpm i
         
       - name: Install Azion CLI
         run: |
           curl -o azionlinux https://downloads.azion.com/linux/x86_64/azion
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
+
+      - name: Create .env file
+        run: |
+          echo "PUBLIC_COSMIC_BUCKET_SLUG=${{ secrets.PUBLIC_COSMIC_BUCKET_SLUG }}" >> .env
+          echo "PUBLIC_COSMIC_READ_KEY=${{ secrets.PUBLIC_COSMIC_READ_KEY }}" >> .env
 
       - name: Azion Action Deploy
         run: |
