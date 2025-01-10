@@ -33,6 +33,11 @@ jobs:
           sudo mv azionlinux /usr/bin/azion
           sudo chmod u+x /usr/bin/azion
 
+      - name: Create .env file
+        run: |
+          echo "PUBLIC_SANITY_STUDIO_PROJECT_ID=${{ secrets.PUBLIC_SANITY_STUDIO_PROJECT_ID }}" >> .env
+          echo "PUBLIC_SANITY_STUDIO_DATASET=${{ secrets.PUBLIC_SANITY_STUDIO_DATASET }}" >> .env
+
       - name: Azion Action Deploy
         run: |
           azion -t ${{ secrets.AZION_PERSONAL_TOKEN }}
