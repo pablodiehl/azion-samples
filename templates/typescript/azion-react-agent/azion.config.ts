@@ -8,6 +8,18 @@ export default defineConfig({
     },
   },
   rules: {
+    request: [
+      {
+        name: "Execute Edge Function",
+        active: true,
+        match: "^\\/",
+        behavior: {
+            runFunction:{
+              path: ".edge/worker.js"
+            }
+        },
+      },
+    ],
     response: [
       {
         name: "CORS headers",
