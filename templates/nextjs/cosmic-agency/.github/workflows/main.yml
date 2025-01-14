@@ -35,11 +35,11 @@ jobs:
 
       - name: Create .env file
         run: |
-          echo "COSMIC_BUCKET_SLUG=${{ secrets.COSMIC_BUCKET_SLUG }}" >> .env
-          echo "COSMIC_READ_KEY=${{ secrets.COSMIC_READ_KEY }}" >> .env
-          echo "COSMIC_WRITE_KEY=${{ secrets.COSMIC_WRITE_KEY }}" >> .env
-          echo "NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=${{ secrets.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY }}" >> .env
-          echo "STRIPE_SECRET_KEY=${{ secrets.STRIPE_SECRET_KEY }}" >> .env
+          echo "AGENCY_COSMIC_BUCKET_SLUG=${{ secrets.AGENCY_COSMIC_BUCKET_SLUG }}" >> .env
+          echo "AGENCY_COSMIC_READ_KEY=${{ secrets.AGENCY_COSMIC_READ_KEY }}" >> .env
+          echo "AGENCY_COSMIC_WRITE_KEY=${{ secrets.AGENCY_COSMIC_WRITE_KEY }}" >> .env
+          echo "AGENCY_STRIPE_PUBLISHABLE_KEY=${{ secrets.AGENCY_STRIPE_PUBLISHABLE_KEY }}" >> .env
+          echo "AGENCY_STRIPE_SECRET_KEY=${{ secrets.AGENCY_STRIPE_SECRET_KEY }}" >> .env
 
       - name: Azion Action Deploy
         run: |

@@ -11,7 +11,7 @@ import Link from "next/link";
 import { cn } from "@/cosmic/utils";
 
 const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || ""
+  process.env.AGENCY_STRIPE_PUBLISHABLE_KEY || ""
 );
 
 function cartTotal(cart: ProductType[]) {
