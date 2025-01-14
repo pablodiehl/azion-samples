@@ -57,11 +57,11 @@ It will look like this:
 
 ```
 # .env.local
-COSMIC_BUCKET_SLUG=change_to_your_bucket_slug
-COSMIC_READ_KEY=change_to_your_bucket_read_key
-COSMIC_WRITE_KEY=change_to_your_bucket_write_key
-NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=change_to_your_stripe_public_key
-STRIPE_SECRET_KEY=change_to_your_stripe_secret_key
+AGENCY_COSMIC_BUCKET_SLUG=change_to_your_bucket_slug
+AGENCY_COSMIC_READ_KEY=change_to_your_bucket_read_key
+AGENCY_COSMIC_WRITE_KEY=change_to_your_bucket_write_key
+AGENCY_STRIPE_PUBLISHABLE_KEY=change_to_your_stripe_public_key
+AGENCY_STRIPE_SECRET_KEY=change_to_your_AGENCY_STRIPE_SECRET_KEY
 ```
 
 4. Run the template.

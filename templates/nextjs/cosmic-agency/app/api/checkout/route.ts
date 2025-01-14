@@ -1,6 +1,6 @@
 // app/api/checkout/route.ts
 import { type NextRequest, NextResponse } from "next/server";
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const stripe = require("stripe")(process.env.AGENCY_STRIPE_SECRET_KEY);
 
 export async function POST(request: NextRequest) {
   const res = await request.json();
